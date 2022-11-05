@@ -10,6 +10,9 @@ import android.view.ViewGroup
 import nauk0a.algorithm.game.R
 import nauk0a.algorithm.game.databinding.FragmentLoginBinding
 import nauk0a.algorithm.game.presentation.viewmodels.LoginViewModel
+import ru.tinkoff.decoro.MaskImpl
+import ru.tinkoff.decoro.slots.PredefinedSlots
+import ru.tinkoff.decoro.watchers.MaskFormatWatcher
 
 class LoginFragment : Fragment() {
 
@@ -32,7 +35,10 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.loginEt.addTextChangedListener(PhoneNumberFormattingTextWatcher())
+
+        val formatWatcher =
+            MaskFormatWatcher(MaskImpl.createNonTerminated(PredefinedSlots.RUS_PHONE_NUMBER))
+        formatWatcher.installOn(binding.loginEt)
     }
 
     override fun onDestroyView() {

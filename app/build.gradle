@@ -70,4 +70,7 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
+    implementation "ru.tinkoff.decoro:decoro:1.5.1"
+
+
 }
