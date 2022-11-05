@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "26582357148",
+    "project_id": "algorithm-game-83dde",
+    "storage_bucket": "algorithm-game-83dde.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:26582357148:android:e76a6d3e102d720a4ec959",
+        "android_client_info": {
+          "package_name": "nauk0a.algorithm.game"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "26582357148-g4l0rhe1cp1uq2aj4hk0rvfamkv20sug.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjfwTy6kzh_eGT3OHafGnm428Iau3_0Ag"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "26582357148-g4l0rhe1cp1uq2aj4hk0rvfamkv20sug.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

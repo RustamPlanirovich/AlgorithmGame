@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="admin_module">Админ модуль</string>
+    <string name="enter_pass">Введите пароль</string>
+    <string name="login">Войти</string>
+    <string name="forget_pass">Забыл пароль</string>
+</resources>

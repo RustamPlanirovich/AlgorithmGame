@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Algorithm Game</string>
+    <string name="admin_module">Админ модуль</string>
+    <string name="enter_login">Введите логин</string>
+    <string name="enter_pass">Введите пароль</string>
+    <string name="login">Войти</string>
+    <string name="forget_pass">Забыл пароль</string>
+</resources>
