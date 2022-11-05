@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -19,30 +20,46 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:maxLength="18"
         android:layout_margin="@dimen/all_margin"
-        android:hint="@string/enter_login" />
+        android:hint="@string/enter_login"
+        android:maxLength="18" />
 
-    <EditText
-        android:id="@+id/pass_et"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etPasswordLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="@dimen/all_margin"
-        android:hint="@string/enter_pass" />
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pass_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_pass"
+            android:inputType="textPassword" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+<!--    <EditText-->
+<!--        android:id="@+id/pass_et"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_margin="@dimen/all_margin"-->
+<!--        android:hint="@string/enter_pass"-->
+<!--        android:inputType="textPassword" />-->
 
     <Button
         android:id="@+id/login_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/login"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:text="@string/login" />
 
     <Button
         android:id="@+id/forget_pass_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/forget_pass"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:text="@string/forget_pass" />
 
 </LinearLayout>

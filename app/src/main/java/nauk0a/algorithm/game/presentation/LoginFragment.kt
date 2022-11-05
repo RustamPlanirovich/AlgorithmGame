@@ -3,10 +3,13 @@ package nauk0a.algorithm.game.presentation
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.telephony.PhoneNumberFormattingTextWatcher
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.widget.doAfterTextChanged
 import nauk0a.algorithm.game.R
 import nauk0a.algorithm.game.databinding.FragmentLoginBinding
 import nauk0a.algorithm.game.presentation.viewmodels.LoginViewModel
@@ -39,6 +42,12 @@ class LoginFragment : Fragment() {
         val formatWatcher =
             MaskFormatWatcher(MaskImpl.createNonTerminated(PredefinedSlots.RUS_PHONE_NUMBER))
         formatWatcher.installOn(binding.loginEt)
+
+        binding.passEt.doAfterTextChanged {
+            binding.modulName.text = it
+        }
+
+        binding.modulName.text = binding.passEt.text
     }
 
     override fun onDestroyView() {
