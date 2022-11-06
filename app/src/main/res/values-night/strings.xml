@@ -4,4 +4,5 @@
     <string name="enter_pass">Введите пароль</string>
     <string name="login">Войти</string>
     <string name="forget_pass">Забыл пароль</string>
+    <string name="pass_error_message">Пароль должен содержать хотя бы одну цифру и символ, а так же строчные и заглавные буквы</string>
 </resources>

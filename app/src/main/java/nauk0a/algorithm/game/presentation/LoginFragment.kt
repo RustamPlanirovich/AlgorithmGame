@@ -1,15 +1,12 @@
 package nauk0a.algorithm.game.presentation
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import android.telephony.PhoneNumberFormattingTextWatcher
-import android.text.Editable
-import android.text.TextWatcher
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.doAfterTextChanged
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import nauk0a.algorithm.game.R
 import nauk0a.algorithm.game.databinding.FragmentLoginBinding
 import nauk0a.algorithm.game.presentation.viewmodels.LoginViewModel
@@ -44,14 +41,30 @@ class LoginFragment : Fragment() {
         formatWatcher.installOn(binding.loginEt)
 
         binding.passEt.doAfterTextChanged {
-            binding.modulName.text = it
+            if (isValidPassword(it.toString())){
+                binding.etPasswordLayout.isErrorEnabled = false
+
+            } else {
+                binding.etPasswordLayout.isErrorEnabled = true
+                binding.etPasswordLayout.error = getString(R.string.pass_error_message)
+            }
         }
 
-        binding.modulName.text = binding.passEt.text
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    internal fun isValidPassword(password: String): Boolean {
+        if (password.length < 7) return false
+        if (password.filter { it.isDigit() }.firstOrNull() == null) return false
+        if (password.filter { it.isLetter() }.filter { it.isUpperCase() }
+                .firstOrNull() == null) return false
+        if (password.filter { it.isLetter() }.filter { it.isLowerCase() }
+                .firstOrNull() == null) return false
+        if (password.filter { it.isLetterOrDigit() }.firstOrNull() == null) return false
+        return true
     }
 }

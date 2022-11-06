@@ -15,14 +15,29 @@
         android:layout_margin="@dimen/all_margin"
         android:text="@string/admin_module" />
 
-    <EditText
-        android:id="@+id/login_et"
-        android:layout_width="wrap_content"
+<!--    <EditText-->
+<!--        android:id="@+id/login_et"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_margin="@dimen/all_margin"-->
+<!--        android:hint="@string/enter_login"-->
+<!--        android:maxLength="18" />-->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etLoginLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="@dimen/all_margin"
-        android:hint="@string/enter_login"
-        android:maxLength="18" />
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/login_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="18"
+            android:hint="@string/enter_login" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/etPasswordLayout"
@@ -34,6 +49,7 @@
             android:id="@+id/pass_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:maxLength="8"
             android:hint="@string/enter_pass"
             android:inputType="textPassword" />
 
